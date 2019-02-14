@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  if title
+    h1= title
+    p Welcome to #{title}
+      |  this is not a <em>private lib</em>
+    ul(class='list-group') 
+      //- Strong is part of the function call
+      li(class='list-group-item list-group-item-success') #[strong Books: ] #{data.book_count}
+      li(class="list-group-item list-group-item-info") #[strong Authors: ] #{data.author_count}
+      li(class="list-group-item list-group-item-warning") #[strong Copies: ] #{data.book_instance_count}
+      li(class='list-group-item list-group-item-danger') #[strong Genres: ] #{data.genre_count}
+    label(for="team") ENTER:
+  else
+    p Not welcome
