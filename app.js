@@ -22,7 +22,7 @@ app.use(helmet());
 app.use(compression());
 
 
-var mongoDB = 'mongodb://XXXXXX:xxxxxxxxxxxx@ds213239.mlab.com:13239/local_library';
+var mongoDB = process.env.MONGODB_URL ||'mongodb://Hanayo:passwd123@ds213239.mlab.com:13239/local_library';
 mongoose.connect(mongoDB,{useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 
